@@ -29,25 +29,20 @@
     <div class="form-elements">
       <fieldset class="pure-group">
         <label for="name">Original: </label>
-        <input id="name" name="name" placeholder="What your Mom calls you" />
+        <input id="original" name="original" rows="10" placeholder="Original article text" />
       </fieldset>
 
       <fieldset class="pure-group">
         <label for="message">Translated: </label>
-        <textarea id="message" name="message" rows="10"
-        placeholder="Tell us what's on your mind..."></textarea>
+        <textarea id="translated" name="translated" rows="10"
+        placeholder="Machine translation"></textarea>
       </fieldset>
 
       <fieldset class="pure-group">
         <label for="email">Fixed:</label>
-        <input id="email" name="email" type="email" value=""
+        <input id="final" name="final" type="email" rows="10" value=""
         required placeholder="your.name@email.com"/>
       </fieldset>
-
-      /**<fieldset class="pure-group">
-        <label for="color">Favourite Color: </label>
-        <input id="color" name="color" placeholder="green" />
-      </fieldset>*/
 
       <fieldset class="pure-group honeypot-field">
         <label for="honeypot">To help avoid spam, utilize a Honeypot technique with a hidden text field; must be empty to submit the form! Otherwise, we assume the user is a spam bot.</label>
