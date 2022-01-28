@@ -17,11 +17,17 @@
       input.setAttribute("type", "text");
       document.body.appendChild(input);
     input.style.textAlign = "center";
-    //input.addEventListener("keydown", function(e) {
-    //    if (!e) { var e = window.event; }
-    //    e.preventDefault(); // sometimes useful
-    //    if (e.keyCode == 13) { submitFunction(); }
-    //},false);
+    function submitFunction(wish) {
+        document.write(wish);
+    }
+    input.addEventListener("keydown", function(e) {
+        if (!e) { var e = window.event; }
+        e.preventDefault(); // sometimes useful
+        if (e.keyCode == 13) { 
+            submitFunction(input.value);
+            input.value = "";
+        }
+    },false);
 
   </script>
   
