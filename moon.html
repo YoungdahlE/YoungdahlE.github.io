@@ -29,10 +29,11 @@
     function submitFunction(wish) {
         input.value = "MEOW";
         sleep(1000);
-        log.textContent += wish;
+        document.getElementById("star").innerHTML = wish;
     }
 
   </script>
-  
+  <p id="star"></p><br>
+    
   <p>Copyright Erik Youngdahl 2022</p>
 </body>
