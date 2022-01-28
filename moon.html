@@ -13,12 +13,13 @@
     });
   </script>
   <script>
+    var comet = "Meowzercise!";
     const input = document.createElement("input");
       input.setAttribute("type", "text");
       document.body.appendChild(input);
     input.style.textAlign = "center";
     function submitFunction(wish) {
-        document.write(wish);
+        comet = wish;
     }
     input.addEventListener("keydown", function(e) {
         if (!e) { var e = window.event; }
@@ -28,7 +29,7 @@
             input.value = "";
         }
     },false);
-
+    comet;
   </script>
   
   <p>Copyright Erik Youngdahl 2022</p>
