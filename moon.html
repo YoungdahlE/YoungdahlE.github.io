@@ -17,10 +17,9 @@
         return new Promise(resolve => setTimeout(resolve, ms));
     }
       
-    //const input = document.createElement("input");
-    //  input.setAttribute("type", "text");
-    //  document.body.appendChild(input);
-    const input = document.querySelector("input");
+    const input = document.createElement("input");
+      input.setAttribute("type", "text");
+      document.body.appendChild(input);
     input.style.textAlign = "center";
     
     const log = document.getElementById('log');
