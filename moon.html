@@ -18,18 +18,19 @@
     input.style.textAlign = "center";
     
     const log = document.getElementById('log');
-      
-    function submitFunction(wish) {
-        input.value = "";
-        sleep(1000);
-        log.textContent += wish;
-    }
-      
+            
     input.addEventListener("keydown", function(e) {
         if (!e) { var e = window.event; }
         e.preventDefault(); // sometimes useful
         if (e.keyCode == 13) { submitFunction(input.value); }
     },false);
+
+    function submitFunction(wish) {
+        input.value = "";
+        sleep(1000);
+        log.textContent += wish;
+    }
+
   </script>
   
   <p>Copyright Erik Youngdahl 2022</p>
