@@ -18,8 +18,13 @@
     input.style.textAlign = "center";
     input.value="Cat goes:";
     
-    const log = document.getElementById('log');
+    //const log = document.getElementById('log');
 
+    input.addEventListener("keydown", function(e) {
+        if (!e) { var e = window.event; }
+        e.preventDefault(); // sometimes useful
+        if (e.keyCode == 13) { submitFunction(input.value); }
+    },false);
 
     function submitFunction(wish) {
         input.value = "MEOW";
@@ -27,12 +32,6 @@
         document.getElementById("star").innerHTML = wish;
     }
             
-    input.addEventListener("keydown", function(e) {
-        if (!e) { var e = window.event; }
-        e.preventDefault(); // sometimes useful
-        if (e.keyCode == 13) { submitFunction(input.value); }
-    },false);
-
   </script>
   <p id="star"> </p><br>
     
