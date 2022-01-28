@@ -13,23 +13,25 @@
     });
   </script>
   <script>
-    var comet = "Meowzercise!";
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+      
     const input = document.createElement("input");
       input.setAttribute("type", "text");
       document.body.appendChild(input);
     input.style.textAlign = "center";
-    function submitFunction(wish) {
-        comet = wish;
+      
+    function submitFunction(e) {
+        if (e == 13) {
+            var wish = input.value;
+            input.value = "";
+            sleep(1000)
+            log.textContent = input.value;
+        }
     }
-    input.addEventListener("keydown", function(e) {
-        if (!e) { var e = window.event; }
-        e.preventDefault(); // sometimes useful
-        //if (e.keyCode == 13) { 
-        //    submitFunction(input.value);
-        //    input.value = "Mewpocalypse!";
-        //}
-    },false);
-    comet;
+      
+    input.addEventListener("keydown", submitFunction)
   </script>
   
   <p>Copyright Erik Youngdahl 2022</p>
