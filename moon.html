@@ -8,11 +8,6 @@
 
 <body>
   <script>
-    window.addEventListener('load', function () {
-    console.log('This function is executed once the page is fully loaded');
-    });
-  </script>
-  <script>
     function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
@@ -34,7 +29,7 @@
         if (!e) { var e = window.event; }
         e.preventDefault(); // sometimes useful
         if (e.keyCode == 13) { submitFunction(input.value); }
-    },return true);
+    },false);
   </script>
   
   <p>Copyright Erik Youngdahl 2022</p>
