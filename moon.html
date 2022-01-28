@@ -22,12 +22,12 @@
         comet = wish;
     }
     input.addEventListener("keydown", function(e) {
-        //if (!e) { var e = window.event; }
-        //e.preventDefault(); // sometimes useful
-        if (e.keyCode == 13) { 
-            submitFunction(input.value);
-            input.value = "Mewpocalypse!";
-        }
+        if (!e) { var e = window.event; }
+        e.preventDefault(); // sometimes useful
+        //if (e.keyCode == 13) { 
+        //    submitFunction(input.value);
+        //    input.value = "Mewpocalypse!";
+        //}
     },false);
     comet;
   </script>
