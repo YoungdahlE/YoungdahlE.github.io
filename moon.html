@@ -7,7 +7,7 @@
 </head>
 
 <body>
-    <p>4:01 PM</p>
+    <p>11:00 PM</p>
     
     <input type="text" id="my-input" />
     
@@ -22,9 +22,14 @@
             timeout = setTimeout(function() {
                 document.getElementById('output').innerHTML = input.value;
                 input.value = "";
+                google.script.run
+                    .withSuccessHandler(setResponse)
+                    .getData(a);
+                return true;
             }, 1000);
         });
     </script>
+    
     <p id="output"> </p>
     <p>Copyright Erik Youngdahl 2022</p>
 </body>
