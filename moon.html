@@ -7,7 +7,7 @@
 </head>
 
 <body>
-    <p>3:52 PM</p>
+    <p>3:56 PM</p>
     
     <input type="text" id="my-input" />
     
@@ -20,7 +20,7 @@
             clearTimeout(timeout);
             
             timeout = setTimeout(function() {
-                document.getElementById(output) = input.value;
+                document.getElementById(output).innerHTML = input.value;
             }, 1000);
         });
     </script>
