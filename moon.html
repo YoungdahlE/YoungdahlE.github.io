@@ -7,33 +7,22 @@
 </head>
 
 <body>
-  <script>
-    function sleep(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
-    }
-      
-    const input = document.createElement("input");
-      input.setAttribute("type", "text");
-      document.body.appendChild(input);
-    input.style.textAlign = "center";
-    input.value="Cat goes:";
+    <input type="text" id="my-input" />
     
-    //const log = document.getElementById('log');
-
-    input.addEventListener("keydown", function(e) {
-        if (!e) { var e = window.event; }
-        e.preventDefault(); // sometimes useful
-        if (e.keyCode == 13) { submitFunction(input.value); }
-    },false);
-
-    function submitFunction(wish) {
-        input.value = "MEOW";
-        sleep(10000);
-        document.getElementById("star").innerHTML = wish;
-    }
+    <script>
+        let input - document.querySelector('#my-input');
+        
+        let timeout = null;
+        
+        input.addEventListener('keyup', function (e) {
+            clearTimeout(timeout);
             
-  </script>
-  <p id="star"> </p><br>
+            timeout = setTimeout(function() {
+                console.log(textInput.value);
+                textInput.value = "";
+            }, 1000);
+        });
+    </script>
     
-  <p>Copyright Erik Youngdahl 2022</p>
+    <p>Copyright Erik Youngdahl 2022</p>
 </body>
