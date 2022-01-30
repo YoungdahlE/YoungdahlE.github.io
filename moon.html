@@ -9,7 +9,7 @@
 <body>
     <script>
         function makeid(length) {
-            if(url.substr(-5) = ".html") {
+            if(url.substr(-5) == ".html") {
                 var result = '';
                 var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
                 var charactersLength = characters.length;
@@ -22,7 +22,7 @@
             
             document.getElementById('id').innerHTML = result;
             
-            if (result = url.substr(-5)) {
+            if (result != url.substr(-5)) {
                 var url = window.location.href,
                     separator = (url.indexOf("?")===-1)?"?":"&",
                     newParam=separator + result;
@@ -36,7 +36,7 @@
         });
     </script>
     
-    <p>10:48 PM</p>
+    <p>10:55 PM</p>
     
     <input type="text" id="my-input" />
         
