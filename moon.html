@@ -7,20 +7,9 @@
 </head>
 
 <body>
-    <p>9:02 PM</p>
+    <p>9:04 PM</p>
     
     <input type="text" id="my-input" />
-    
-    <script>
-        var SCRIPT_URL = "http://script.google.com/AKfycbwRd5anmpBnNqkRGK-l2EqwXGJxotqDN_NiIzZvu1n5rWq0OSMUflxBr6mCNFngoW7a/exec";
-        $(document).ready(function() {
-            $.getJSON(SCRIPT_URL+"?callback=?"
-                      ,{method:"populate_list"},
-                      function (data) { 
-                alert(JSON.stringify(data)); 
-            });
-        });
-    </script>
         
     <script>
         let input = document.getElementById('my-input');
