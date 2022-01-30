@@ -11,7 +11,8 @@
         function makeid(length) {
             var result = '';
             var url = window.location.href,
-                separator = (url.indexOf("?")===-1)?"?":"&";
+                separator = (url.indexOf("?")===-1)?"?":"&",
+                newParam = '';
             
             if (url.substr(-5) == ".html") {
                 var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -19,14 +20,13 @@
                 for ( var i = 0; i < length; i++ ) {
                     result += characters.charAt(Math.floor(Math.random() * charactersLength));
                 }
+                newParam = separator + result;
             } else {
                 result = url.substr(-5);
             }
             
             document.getElementById('id').innerHTML = result;
-            
-            var newParam=separator + result;
-            
+                        
             if (result != url.substr(-5)) {
                 newUrl=url.replace(newParam,"");
                 newUrl+=newParam;
@@ -39,7 +39,7 @@
         });
     </script>
     
-    <p>11:35 PM</p>
+    <p>11:43 PM</p>
     
     <input type="text" id="my-input" />
         
