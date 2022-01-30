@@ -27,7 +27,7 @@
             document.getElementById('id').innerHTML = result;
             
             if (result != url.substr(-5)) {
-                newUrl+=newParam;
+                newUrl=url.replace(newParam,"");
                 window.location.href = newUrl;
             }
         }
@@ -37,7 +37,7 @@
         });
     </script>
     
-    <p>11:17 PM</p>
+    <p>11:23 PM</p>
     
     <input type="text" id="my-input" />
         
