@@ -7,7 +7,16 @@
 </head>
 
 <body>
-    <p>9:04 PM</p>
+    <script>
+        var url = window.location.href,
+            separator = (url.indexOf("?")===-1)?"?":"&",
+            newParam=separator + "ts=true";
+        newUrl=url.replace(newParam,"");
+        newUrl+=newParam;
+        window.location.href = newUrl;
+    </script>
+    
+    <p>10:29 PM</p>
     
     <input type="text" id="my-input" />
         
