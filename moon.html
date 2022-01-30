@@ -7,7 +7,7 @@
 </head>
 
 <body>
-    <p>8:59 PM</p>
+    <p>9:02 PM</p>
     
     <input type="text" id="my-input" />
     
@@ -48,7 +48,9 @@
             var charactersLength = characters.length;
             for ( var i = 0; i < length; i++ ) {
                 result += characters.charAt(Math.floor(Math.random() * charactersLength));
+            }
             document.getElementById('id').innerHTML = 'Poopy!';
+            return result;
             }
         
         document.addEventListener("DOMContentLoaded", function() {
