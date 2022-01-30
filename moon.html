@@ -16,6 +16,13 @@
         
         let timeout = null;
         
+        function updatePage() {
+            $.getJSON('https://youngdahle.github.io/moonbase.json', function(data) {
+                // Your code to update the page here.
+                // `data` is the response JSON, in JavaScript object form.
+            });
+        }
+        
         input.addEventListener('keyup', function (e) {
             clearTimeout(timeout);
             
