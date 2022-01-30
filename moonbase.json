@@ -1,3 +1,5 @@
 {
-  "asdfg": "Alpharobe"
+  "Wishes": [
+    {"id": "asdfg", "wish": "Alpharobe"}
+    ]
 }
