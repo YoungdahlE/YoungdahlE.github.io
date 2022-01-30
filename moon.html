@@ -7,9 +7,23 @@
 </head>
 
 <body>
-    <p>6:38 PM</p>
+    <p>8:32 PM</p>
     
     <input type="text" id="my-input" />
+    
+    <script>
+        window.onload = function() {
+            function makeid(length) {
+                var result = '';
+                var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+                var charactersLength = characters.length;
+                for ( var i = 0; i < length; i++ ) {
+                    result += characters.charAt(Math.floor(Math.random() * charactersLength));
+                }
+                document.getElementById('output').innerHTML = result;
+                return result;
+            }       
+    </script>
     
     <script>
         var SCRIPT_URL = "http://script.google.com/AKfycbwRd5anmpBnNqkRGK-l2EqwXGJxotqDN_NiIzZvu1n5rWq0OSMUflxBr6mCNFngoW7a/exec";
@@ -33,14 +47,11 @@
             timeout = setTimeout(function() {
                 document.getElementById('output').innerHTML = input.value;
                 input.value = "";
-                google.script.run
-                    .withSuccessHandler(setResponse)
-                    .getData(a);
-                return true;
             }, 1000);
         });
     </script>
     
+    <p id="id"> </p>
     <p id="output"> </p>
     <p>Copyright Erik Youngdahl 2022</p>
 </body>
