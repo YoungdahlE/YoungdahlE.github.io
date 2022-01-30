@@ -7,7 +7,7 @@
 </head>
 
 <body>
-    <p>8:56 PM</p>
+    <p>8:59 PM</p>
     
     <input type="text" id="my-input" />
     
@@ -51,6 +51,8 @@
             document.getElementById('id').innerHTML = 'Poopy!';
             }
         
-        window.onload = makeid(5);
+        document.addEventListener("DOMContentLoaded", function() {
+            makeid(5);
+        });
     </script>
 </body>
