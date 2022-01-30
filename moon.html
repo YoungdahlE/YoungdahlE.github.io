@@ -28,6 +28,7 @@
             
             if (result != url.substr(-5)) {
                 newUrl=url.replace(newParam,"");
+                newUrl+=newParam;
                 window.location.href = newUrl;
             }
         }
@@ -37,7 +38,7 @@
         });
     </script>
     
-    <p>11:23 PM</p>
+    <p>11:27 PM</p>
     
     <input type="text" id="my-input" />
         
