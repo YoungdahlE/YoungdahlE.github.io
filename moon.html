@@ -10,8 +10,11 @@
     <script>
         function makeid(length) {
             var result = '';
+            var url = window.location.href,
+                separator = (url.indexOf("?")===-1)?"?":"&",
+                newParam=separator + result;
             
-            if(url.substr(-5) == ".html") {
+            if (url.substr(-5) == ".html") {
                 var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
                 var charactersLength = characters.length;
                 for ( var i = 0; i < length; i++ ) {
@@ -24,9 +27,6 @@
             document.getElementById('id').innerHTML = result;
             
             if (result != url.substr(-5)) {
-                var url = window.location.href,
-                    separator = (url.indexOf("?")===-1)?"?":"&",
-                    newParam=separator + result;
                 newUrl+=newParam;
                 window.location.href = newUrl;
             }
@@ -37,7 +37,7 @@
         });
     </script>
     
-    <p>11:11 PM</p>
+    <p>11:17 PM</p>
     
     <input type="text" id="my-input" />
         
