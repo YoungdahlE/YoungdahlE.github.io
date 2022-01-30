@@ -7,22 +7,24 @@
 </head>
 
 <body>
-    <p>8:32 PM</p>
+    <p>8:35 PM</p>
     
     <input type="text" id="my-input" />
     
     <script>
         window.onload = function() {
-            function makeid(length) {
+            makeid(5)
+            }       
+            
+        function makeid(length) {
                 var result = '';
                 var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
                 var charactersLength = characters.length;
                 for ( var i = 0; i < length; i++ ) {
                     result += characters.charAt(Math.floor(Math.random() * charactersLength));
-                }
                 document.getElementById('output').innerHTML = result;
                 return result;
-            }       
+                }
     </script>
     
     <script>
