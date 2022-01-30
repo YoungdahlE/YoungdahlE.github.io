@@ -9,15 +9,16 @@
 <body>
     <script>
         function makeid(length) {
+            var result = '';
+            
             if(url.substr(-5) == ".html") {
-                var result = '';
                 var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
                 var charactersLength = characters.length;
                 for ( var i = 0; i < length; i++ ) {
                     result += characters.charAt(Math.floor(Math.random() * charactersLength));
                 }
             } else {
-                var result = url.substr(-5);
+                result = url.substr(-5);
             }
             
             document.getElementById('id').innerHTML = result;
@@ -36,7 +37,7 @@
         });
     </script>
     
-    <p>10:55 PM</p>
+    <p>11:11 PM</p>
     
     <input type="text" id="my-input" />
         
