@@ -74,9 +74,9 @@ height="500" width="100%" loading="eager" style="border:none;">
                         
         function populate() {
             loadIndexData();
-            setTimeout(function() {loadOriginalData();}, 5000);
-            setTimeout(function() {loadTranslatedData();}, 10000);
-            setTimeout(function() {lloadFinalData();}, 15000);
+            setTimeout(function() {loadOriginalData();}, 4000);
+            setTimeout(function() {loadTranslatedData();}, 8000);
+            setTimeout(function() {loadFinalData();}, 12000);
         }
     </script>
     
@@ -88,33 +88,11 @@ height="500" width="100%" loading="eager" style="border:none;">
     <button type="button" onclick="populate()">Populate</button>
 
     
-    <!--<script>
+    <script>
         document.getElementById('row').addEventListener('keyup', function (e) {
-            clearTimeout(timeout);
-            
-            timeout = setTimeout(function(e) {
-                loadIndexData();
-            }, 2000);
-            
-            clearTimeout(timeout);
-            
-            timeout = setTimeout(function(e) {
-                loadOriginalData();
-            }, 2000);
-            
-            clearTimeout(timeout);
-            
-            timeout = setTimeout(function(e) {
-                loadTranslationData();
-            }, 2000);
-            
-            clearTimeout(timeout);
-            
-            timeout = setTimeout(function(e) {
-                loadFinalData();
-            }, 2000);
+            populate();
         });
-    </script> -->
+    </script>
     
    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
