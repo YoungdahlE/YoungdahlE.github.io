@@ -32,6 +32,7 @@ height="500" width="100%" loading="eager" style="border:none;">
             };
             xmlhttp.open("GET",url,true);
             xmlhttp.send(null);
+            console.log('loadIndexData done');
         };
         
         const loadOriginalData = async () => {
@@ -44,6 +45,7 @@ height="500" width="100%" loading="eager" style="border:none;">
             };
             xmlhttp.open("GET",url,true);
             xmlhttp.send(null);
+            console.log('loadOriginalData done');
         };
         
         const loadTranslatedData = async () => {          
@@ -56,6 +58,7 @@ height="500" width="100%" loading="eager" style="border:none;">
             };
             xmlhttp.open("GET",url,true);
             xmlhttp.send(null);
+            console.log('loadTranslatedData done');
         };
         
         const loadFinalData = async () => {
@@ -68,14 +71,15 @@ height="500" width="100%" loading="eager" style="border:none;">
             };
             xmlhttp.open("GET",url,true);
             xmlhttp.send(null);
+            console.log('loadFinalData done');
+
         };
-                
-        const dataFillers = [loadIndexData, loadOriginalData, loadTranslatedData, loadFinalData];
-        
+                        
         const populate = () => {
-            for (const filler of dataFillers) {
-                await filler();
-            }
+            loadIndexData();
+            loadOriginalData();
+            loadTranslatedData();
+            loadFinalData();
         };  
     </script>
     
@@ -167,4 +171,4 @@ height="500" width="100%" loading="eager" style="border:none;">
     
     <p id = 'longness'> </p>
     
-    <p> 10:51 </p>
+    <p> 10:56 </p>
