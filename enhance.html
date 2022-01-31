@@ -70,11 +70,32 @@ height="500" width="100%" loading="eager" style="border:none;">
             xmlhttp.send(null);
         }
         
+        let timeout = null;
+        
         function populate() {
-            loadIndexData();
-            loadOriginalData();
-            loadTranslatedData();
-            loadFinalData();
+            clearTimeout(timeout);
+            
+            timeout = setTimeout(function() {
+                loadIndexData();
+            }, 3000);
+            
+            clearTimeout(timeout);
+            
+            timeout = setTimeout(function() {
+                loadOriginalData();
+            }, 3000);
+            
+            clearTimeout(timeout);
+            
+            timeout = setTimeout(function() {
+                loadTranslatedData();
+            }, 3000);
+            
+            clearTimeout(timeout);
+            
+            timeout = setTimeout(function() {
+                loadFinalData();
+            }, 3000);
         }
     </script>
     
@@ -164,4 +185,4 @@ height="500" width="100%" loading="eager" style="border:none;">
   <!-- Submit the Form to Google Using "AJAX" -->
   <script data-cfasync="false" src="form-submission-handler.js"></script>
     
-    <p> 10:08 </p>
+    <p> 10:12 </p>
