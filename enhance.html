@@ -76,7 +76,7 @@ height="500" width="100%" loading="eager" style="border:none;">
             xmlhttp=new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
                 if(xmlhttp.readyState == 4 && xmlhttp.status==200){
-                    document.getElementById("original").innerHTML = JSON.parse(xmlhttp.responseText);
+                    document.getElementById("index").innerHTML = JSON.parse(xmlhttp.responseText);
                 }
             };
             xmlhttp.open("GET",url,true);
@@ -120,10 +120,10 @@ height="500" width="100%" loading="eager" style="border:none;">
         }
     </script>
     <input type="text" id="row" />
-    <button type="button" onclick="loadIndexData()">Original</button>
+    <button type="button" onclick="loadIndexData()">Index</button>
     <button type="button" onclick="loadOriginalData()">Original</button>
     <button type="button" onclick="loadTranslatedData()">Translated</button>
     <button type="button" onclick="loadFinalData()">Final</button>
 
     <div id="display"></div>
-    <p> 2:44 </p>
+    <p> 2:45 </p>
