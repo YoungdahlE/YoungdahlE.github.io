@@ -22,7 +22,7 @@ height="500" width="100%" loading="eager" style="border:none;">
     
 
     <script>
-        const loadIndexData = async () => {
+        function loadIndexData() {
             var url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRWU47ESuHz4qcj19M_qmhbpNQdgbuymoZpKVrBLjWMvV3nO2KdaPH4H6t4CFM-UelpR_-L3DqnO1l1/pub?gid=415927089&single=true&output=tsv&range=A"+document.getElementById('row').value;
             xmlhttp=new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
@@ -32,10 +32,9 @@ height="500" width="100%" loading="eager" style="border:none;">
             };
             xmlhttp.open("GET",url,true);
             xmlhttp.send(null);
-            console.log('loadIndexData done');
-        };
+        }
         
-        const loadOriginalData = async () => {
+        function loadOriginalData() {
             var url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRWU47ESuHz4qcj19M_qmhbpNQdgbuymoZpKVrBLjWMvV3nO2KdaPH4H6t4CFM-UelpR_-L3DqnO1l1/pub?gid=415927089&single=true&output=tsv&range=B"+document.getElementById('row').value;
             xmlhttp=new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
@@ -45,10 +44,9 @@ height="500" width="100%" loading="eager" style="border:none;">
             };
             xmlhttp.open("GET",url,true);
             xmlhttp.send(null);
-            console.log('loadOriginalData done');
-        };
+        }
         
-        const loadTranslatedData = async () => {          
+        function loadTranslatedData() {          
             var url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRWU47ESuHz4qcj19M_qmhbpNQdgbuymoZpKVrBLjWMvV3nO2KdaPH4H6t4CFM-UelpR_-L3DqnO1l1/pub?gid=415927089&single=true&output=tsv&range=C"+document.getElementById('row').value;
             xmlhttp=new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
@@ -58,10 +56,9 @@ height="500" width="100%" loading="eager" style="border:none;">
             };
             xmlhttp.open("GET",url,true);
             xmlhttp.send(null);
-            console.log('loadTranslatedData done');
-        };
+        }
         
-        const loadFinalData = async () => {
+        function loadFinalData() {
             var url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRWU47ESuHz4qcj19M_qmhbpNQdgbuymoZpKVrBLjWMvV3nO2KdaPH4H6t4CFM-UelpR_-L3DqnO1l1/pub?gid=415927089&single=true&output=tsv&range=C"+document.getElementById('row').value;
             xmlhttp=new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
@@ -71,16 +68,16 @@ height="500" width="100%" loading="eager" style="border:none;">
             };
             xmlhttp.open("GET",url,true);
             xmlhttp.send(null);
-            console.log('loadFinalData done');
-
-        };
+        }
+        
+        var delay = 5000;
                         
-        const populate = () => {
+        function populate() => {
             loadIndexData();
-            loadOriginalData();
-            loadTranslatedData();
-            loadFinalData();
-        };  
+            setTimeout(function() {loadOriginalData();}, delay);
+            setTimeout(function() {loadTranslatedData();}, delay * 2);
+            setTimeout(function() {lloadFinalData();}, delay * 3);
+        }
     </script>
     
     <input type="text" id="row" />
@@ -171,4 +168,4 @@ height="500" width="100%" loading="eager" style="border:none;">
     
     <p id = 'longness'> </p>
     
-    <p> 10:56 </p>
+    <p> 11:09 </p>
