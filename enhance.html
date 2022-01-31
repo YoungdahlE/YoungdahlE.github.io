@@ -32,7 +32,7 @@ height="500" width="100%" loading="eager" style="border:none;">
             };
             xmlhttp.open("GET",url,true);
             xmlhttp.send(null);
-        }
+        };
         
         const loadOriginalData = async () => {
             var url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRWU47ESuHz4qcj19M_qmhbpNQdgbuymoZpKVrBLjWMvV3nO2KdaPH4H6t4CFM-UelpR_-L3DqnO1l1/pub?gid=415927089&single=true&output=tsv&range=B"+document.getElementById('row').value;
@@ -44,7 +44,7 @@ height="500" width="100%" loading="eager" style="border:none;">
             };
             xmlhttp.open("GET",url,true);
             xmlhttp.send(null);
-        }
+        };
         
         const loadTranslatedData = async () => {          
             var url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRWU47ESuHz4qcj19M_qmhbpNQdgbuymoZpKVrBLjWMvV3nO2KdaPH4H6t4CFM-UelpR_-L3DqnO1l1/pub?gid=415927089&single=true&output=tsv&range=C"+document.getElementById('row').value;
@@ -56,7 +56,7 @@ height="500" width="100%" loading="eager" style="border:none;">
             };
             xmlhttp.open("GET",url,true);
             xmlhttp.send(null);
-        }
+        };
         
         const loadFinalData = async () => {
             var url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRWU47ESuHz4qcj19M_qmhbpNQdgbuymoZpKVrBLjWMvV3nO2KdaPH4H6t4CFM-UelpR_-L3DqnO1l1/pub?gid=415927089&single=true&output=tsv&range=C"+document.getElementById('row').value;
@@ -68,14 +68,14 @@ height="500" width="100%" loading="eager" style="border:none;">
             };
             xmlhttp.open("GET",url,true);
             xmlhttp.send(null);
-        }
+        };
                 
         const populate = () => {
             loadIndexData();
             loadOriginalData();
             loadTranslatedData();
             loadFinalData();
-        }
+        };
     </script>
     
     <input type="text" id="row" />
@@ -166,4 +166,4 @@ height="500" width="100%" loading="eager" style="border:none;">
     
     <p id = 'longness'> </p>
     
-    <p> 10:37 </p>
+    <p> 10:41 </p>
