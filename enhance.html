@@ -8,9 +8,9 @@
 </head>
 
 <body>
-  <iframe src="https://script.google.com/macros/s/AKfycbyFK7KvVHjaggtirjXxzuhw2_vGnys33Za25qh9cgYqE4h2sMDQB-ngdGA4e8WADYN4gg/exec" 
+  /** <iframe src="https://script.google.com/macros/s/AKfycbyFK7KvVHjaggtirjXxzuhw2_vGnys33Za25qh9cgYqE4h2sMDQB-ngdGA4e8WADYN4gg/exec" 
 height="500" width="100%" loading="eager" style="border:none;">
-    <p>It appears your web browser doesn't support iframes.</p></iframe>
+    <p>It appears your web browser doesn't support iframes.</p></iframe> */
   <h2 class="content-head is-center">Instructions</h2>
   <aside>
        <p>
@@ -20,20 +20,6 @@ height="500" width="100%" loading="eager" style="border:none;">
        </p>
    </aside>
     
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-   <script>
-       $(function(){
-           var url='https://script.google.com/macros/s/AKfycbwc1m-AWLEg7ewCtko7vHkSm8URQJP_hJXKmHffMKXiKVWBh7Vnzq89d-1v-2XSDAgt/exec?range=A1';
-           $.get(url,function(data,status){
-               document.getElementById('spn1').innerHTML=data;
-           });
-       });
-       console.log('MyCode');
-   </script>
-
-    <div id="mydata">The size of my ruler is <span id="spn1"></span> inches.</div>
-
-
    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
    <!-- Style The Contact Form How Ever You Prefer -->
@@ -44,6 +30,11 @@ height="500" width="100%" loading="eager" style="border:none;">
     <!-- change the form action to your script url -->
 
     <div class="form-elements">
+      <fieldset class="pure-group">
+        <label for="name">Index: </label>
+        <textarea id="index" name="index" rows="10" placeholder="Index"></textarea>
+      </fieldset>
+
       <fieldset class="pure-group">
         <label for="name">Original: </label>
         <textarea id="original" name="original" rows="10" placeholder="Original article text"></textarea>
@@ -80,6 +71,18 @@ height="500" width="100%" loading="eager" style="border:none;">
   <script data-cfasync="false" src="form-submission-handler.js"></script>
     
     <script>
+        function loadIndexData() {
+            var url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRWU47ESuHz4qcj19M_qmhbpNQdgbuymoZpKVrBLjWMvV3nO2KdaPH4H6t4CFM-UelpR_-L3DqnO1l1/pub?gid=415927089&single=true&output=csv&range=A"+document.getElementById('row').value;
+            xmlhttp=new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if(xmlhttp.readyState == 4 && xmlhttp.status==200){
+                    document.getElementById("original").innerHTML = JSON.parse(xmlhttp.responseText);
+                }
+            };
+            xmlhttp.open("GET",url,true);
+            xmlhttp.send(null);
+        }
+        
         function loadOriginalData() {
             var url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRWU47ESuHz4qcj19M_qmhbpNQdgbuymoZpKVrBLjWMvV3nO2KdaPH4H6t4CFM-UelpR_-L3DqnO1l1/pub?gid=415927089&single=true&output=csv&range=B"+document.getElementById('row').value;
             xmlhttp=new XMLHttpRequest();
@@ -117,9 +120,10 @@ height="500" width="100%" loading="eager" style="border:none;">
         }
     </script>
     <input type="text" id="row" />
+    <button type="button" onclick="loadIndexData()">Original</button>
     <button type="button" onclick="loadOriginalData()">Original</button>
     <button type="button" onclick="loadTranslatedData()">Translated</button>
     <button type="button" onclick="loadFinalData()">Final</button>
 
     <div id="display"></div>
-    <p> 2:38 </p>
+    <p> 2:42 </p>
