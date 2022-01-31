@@ -46,7 +46,7 @@ height="500" width="100%" loading="eager" style="border:none;">
     <div class="form-elements">
       <fieldset class="pure-group">
         <label for="name">Original: </label>
-        <textarea id="original" name="original" rows="10" placeholder="Original article text"></textarea>
+        <textarea id="original" name="original" rows="10" placeholder="Original article text"></div></textarea>
       </fieldset>
 
       <fieldset class="pure-group">
@@ -81,11 +81,11 @@ height="500" width="100%" loading="eager" style="border:none;">
     
     <script>
         function loadData() {
-            var url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRWU47ESuHz4qcj19M_qmhbpNQdgbuymoZpKVrBLjWMvV3nO2KdaPH4H6t4CFM-UelpR_-L3DqnO1l1/pub?gid=415927089&single=true&output=csv&range=A1";
+            var url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRWU47ESuHz4qcj19M_qmhbpNQdgbuymoZpKVrBLjWMvV3nO2KdaPH4H6t4CFM-UelpR_-L3DqnO1l1/pub?gid=415927089&single=true&output=csv&range=B1";
             xmlhttp=new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
                 if(xmlhttp.readyState == 4 && xmlhttp.status==200){
-                    document.getElementById("display").innerHTML = xmlhttp.responseText;
+                    document.getElementById("original").innerHTML = xmlhttp.responseText;
                 }
             };
             xmlhttp.open("GET",url,true);
@@ -95,4 +95,4 @@ height="500" width="100%" loading="eager" style="border:none;">
     
     <button type="button" onclick="loadData()">Load Spreadsheet Data</button>
     <div id="display"></div>
-    <p> 2:13 </p>
+    <p> 2:17 </p>
