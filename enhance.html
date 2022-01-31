@@ -70,11 +70,40 @@ height="500" width="100%" loading="eager" style="border:none;">
             xmlhttp.send(null);
         }
     </script>
+    
     <input type="text" id="row" />
     <button type="button" onclick="loadIndexData()">Index</button>
     <button type="button" onclick="loadOriginalData()">Original</button>
     <button type="button" onclick="loadTranslatedData()">Translated</button>
     <button type="button" onclick="loadFinalData()">Final</button>
+    
+    <script>
+        document.getElementById('row').addEventListener('keyup', function (e) {
+            clearTimeout(timeout);
+            
+            timeout = setTimeout(function() {
+                loadIndexData();
+            }, 2000);
+            
+            clearTimeout(timeout);
+            
+            timeout = setTimeout(function() {
+                loadOriginalData();
+            }, 2000);
+            
+            clearTimeout(timeout);
+            
+            timeout = setTimeout(function() {
+                loadTranslationData();
+            }, 2000);
+            
+            clearTimeout(timeout);
+            
+            timeout = setTimeout(function() {
+                loadFinalData();
+            }, 2000);
+        });
+    </script>
     
    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -126,4 +155,4 @@ height="500" width="100%" loading="eager" style="border:none;">
   <!-- Submit the Form to Google Using "AJAX" -->
   <script data-cfasync="false" src="form-submission-handler.js"></script>
     
-    <p> 2:49 </p>
+    <p> 5:17 </p>
