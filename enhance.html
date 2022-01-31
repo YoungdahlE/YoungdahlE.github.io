@@ -69,6 +69,13 @@ height="500" width="100%" loading="eager" style="border:none;">
             xmlhttp.open("GET",url,true);
             xmlhttp.send(null);
         }
+        
+        function populate() {
+            loadIndexData();
+            loadOriginalData();
+            loadTranslatedData();
+            loadFinalData();
+        }
     </script>
     
     <input type="text" id="row" />
@@ -76,6 +83,8 @@ height="500" width="100%" loading="eager" style="border:none;">
     <button type="button" onclick="loadOriginalData()">Original</button>
     <button type="button" onclick="loadTranslatedData()">Translated</button>
     <button type="button" onclick="loadFinalData()">Final</button>
+    <button type="button" onclick="populate()">Populate</button>
+
     
     <!--<script>
         document.getElementById('row').addEventListener('keyup', function (e) {
@@ -155,4 +164,4 @@ height="500" width="100%" loading="eager" style="border:none;">
   <!-- Submit the Form to Google Using "AJAX" -->
   <script data-cfasync="false" src="form-submission-handler.js"></script>
     
-    <p> 9:16 </p>
+    <p> 10:08 </p>
