@@ -27,7 +27,7 @@ height="500" width="100%" loading="eager" style="border:none;">
             xmlhttp=new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
                 if(xmlhttp.readyState == 4 && xmlhttp.status==200){
-                    document.getElementById("index").innerHTML = JSON.parse(xmlhttp.responseText);
+                    document.getElementById("index").innerHTML = xmlhttp.responseText;
                 }
             };
             xmlhttp.open("GET",url,true);
@@ -35,11 +35,11 @@ height="500" width="100%" loading="eager" style="border:none;">
         }
         
         function loadOriginalData() {
-            var url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRWU47ESuHz4qcj19M_qmhbpNQdgbuymoZpKVrBLjWMvV3nO2KdaPH4H6t4CFM-UelpR_-L3DqnO1l1/pub?gid=415927089&single=true&output=csv&range=B"+document.getElementById('row').value;
+            var url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRWU47ESuHz4qcj19M_qmhbpNQdgbuymoZpKVrBLjWMvV3nO2KdaPH4H6t4CFM-UelpR_-L3DqnO1l1/pub?gid=415927089&single=true&output=tsv&range=B"+document.getElementById('row').value;
             xmlhttp=new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
                 if(xmlhttp.readyState == 4 && xmlhttp.status==200){
-                    document.getElementById("original").innerHTML = JSON.parse(xmlhttp.responseText);
+                    document.getElementById("original").innerHTML = xmlhttp.responseText;
                 }
             };
             xmlhttp.open("GET",url,true);
@@ -51,7 +51,7 @@ height="500" width="100%" loading="eager" style="border:none;">
             xmlhttp=new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
                 if(xmlhttp.readyState == 4 && xmlhttp.status==200){
-                    document.getElementById("translated").innerHTML = JSON.parse(xmlhttp.responseText);
+                    document.getElementById("translated").innerHTML = xmlhttp.responseText;
                 }
             };
             xmlhttp.open("GET",url,true);
@@ -155,4 +155,4 @@ height="500" width="100%" loading="eager" style="border:none;">
   <!-- Submit the Form to Google Using "AJAX" -->
   <script data-cfasync="false" src="form-submission-handler.js"></script>
     
-    <p> 8:59 </p>
+    <p> 9:14 </p>
