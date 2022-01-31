@@ -35,7 +35,7 @@ height="500" width="100%" loading="eager" style="border:none;">
         }
         
         function loadOriginalData() {
-            var url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRWU47ESuHz4qcj19M_qmhbpNQdgbuymoZpKVrBLjWMvV3nO2KdaPH4H6t4CFM-UelpR_-L3DqnO1l1/pub?gid=415927089&single=true&output=json&range=B"+document.getElementById('row').value;
+            var url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRWU47ESuHz4qcj19M_qmhbpNQdgbuymoZpKVrBLjWMvV3nO2KdaPH4H6t4CFM-UelpR_-L3DqnO1l1/pub?gid=415927089&single=true&output=string&range=B"+document.getElementById('row').value;
             xmlhttp=new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
                 if(xmlhttp.readyState == 4 && xmlhttp.status==200){
@@ -155,4 +155,4 @@ height="500" width="100%" loading="eager" style="border:none;">
   <!-- Submit the Form to Google Using "AJAX" -->
   <script data-cfasync="false" src="form-submission-handler.js"></script>
     
-    <p> 8:47</p>
+    <p> 8:53 </p>
