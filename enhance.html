@@ -81,25 +81,25 @@ height="500" width="100%" loading="eager" style="border:none;">
         document.getElementById('row').addEventListener('keyup', function (e) {
             clearTimeout(timeout);
             
-            timeout = setTimeout(function() {
+            timeout = setTimeout(function(e) {
                 loadIndexData();
             }, 2000);
             
             clearTimeout(timeout);
             
-            timeout = setTimeout(function() {
+            timeout = setTimeout(function(e) {
                 loadOriginalData();
             }, 2000);
             
             clearTimeout(timeout);
             
-            timeout = setTimeout(function() {
+            timeout = setTimeout(function(e) {
                 loadTranslationData();
             }, 2000);
             
             clearTimeout(timeout);
             
-            timeout = setTimeout(function() {
+            timeout = setTimeout(function(e) {
                 loadFinalData();
             }, 2000);
         });
@@ -155,4 +155,4 @@ height="500" width="100%" loading="eager" style="border:none;">
   <!-- Submit the Form to Google Using "AJAX" -->
   <script data-cfasync="false" src="form-submission-handler.js"></script>
     
-    <p> 5:17 </p>
+    <p> 5:28 </p>
