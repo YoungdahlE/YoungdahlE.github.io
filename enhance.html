@@ -81,31 +81,31 @@ height="500" width="100%" loading="eager" style="border:none;">
     
     <script>
         function loadData() {
-            var url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRWU47ESuHz4qcj19M_qmhbpNQdgbuymoZpKVrBLjWMvV3nO2KdaPH4H6t4CFM-UelpR_-L3DqnO1l1/pub?gid=415927089&single=true&output=csv&range=B"+document.getElementById('row').value.slice(1,-1);
+            var url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRWU47ESuHz4qcj19M_qmhbpNQdgbuymoZpKVrBLjWMvV3nO2KdaPH4H6t4CFM-UelpR_-L3DqnO1l1/pub?gid=415927089&single=true&output=csv&range=B"+document.getElementById('row').value;
             xmlhttp=new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
                 if(xmlhttp.readyState == 4 && xmlhttp.status==200){
-                    document.getElementById("original").innerHTML = xmlhttp.responseText;
+                    document.getElementById("original").innerHTML = xmlhttp.responseText.slice(1,-1);
                 }
             };
             xmlhttp.open("GET",url,true);
             xmlhttp.send(null);
             
-            url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRWU47ESuHz4qcj19M_qmhbpNQdgbuymoZpKVrBLjWMvV3nO2KdaPH4H6t4CFM-UelpR_-L3DqnO1l1/pub?gid=415927089&single=true&output=csv&range=C"+document.getElementById('row').value.slice(1,-1);
+            url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRWU47ESuHz4qcj19M_qmhbpNQdgbuymoZpKVrBLjWMvV3nO2KdaPH4H6t4CFM-UelpR_-L3DqnO1l1/pub?gid=415927089&single=true&output=csv&range=C"+document.getElementById('row').value;
             xmlhttp=new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
                 if(xmlhttp.readyState == 4 && xmlhttp.status==200){
-                    document.getElementById("translated").innerHTML = xmlhttp.responseText;
+                    document.getElementById("translated").innerHTML = xmlhttp.responseText.slice(1,-1);
                 }
             };
             xmlhttp.open("GET",url,true);
             xmlhttp.send(null);
             
-            url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRWU47ESuHz4qcj19M_qmhbpNQdgbuymoZpKVrBLjWMvV3nO2KdaPH4H6t4CFM-UelpR_-L3DqnO1l1/pub?gid=415927089&single=true&output=csv&range=D"+document.getElementById('row').value.slice(1,-1);
+            url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRWU47ESuHz4qcj19M_qmhbpNQdgbuymoZpKVrBLjWMvV3nO2KdaPH4H6t4CFM-UelpR_-L3DqnO1l1/pub?gid=415927089&single=true&output=csv&range=D"+document.getElementById('row').value;
             xmlhttp=new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
                 if(xmlhttp.readyState == 4 && xmlhttp.status==200){
-                    document.getElementById("final").innerHTML = xmlhttp.responseText;
+                    document.getElementById("final").innerHTML = xmlhttp.responseText.slice(1,-1);
                 }
             };
             xmlhttp.open("GET",url,true);
@@ -115,4 +115,4 @@ height="500" width="100%" loading="eager" style="border:none;">
     <input type="text" id="row" />
     <button type="button" onclick="loadData()">Load Spreadsheet Data</button>
     <div id="display"></div>
-    <p> 2:25 </p>
+    <p> 2:29 </p>
