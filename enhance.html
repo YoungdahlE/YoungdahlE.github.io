@@ -22,7 +22,7 @@ height="500" width="100%" loading="eager" style="border:none;">
     
 
     <script>
-        function loadIndexData() {
+        async loadIndexData() {
             var url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRWU47ESuHz4qcj19M_qmhbpNQdgbuymoZpKVrBLjWMvV3nO2KdaPH4H6t4CFM-UelpR_-L3DqnO1l1/pub?gid=415927089&single=true&output=tsv&range=A"+document.getElementById('row').value;
             xmlhttp=new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
@@ -34,7 +34,7 @@ height="500" width="100%" loading="eager" style="border:none;">
             xmlhttp.send(null);
         }
         
-        function loadOriginalData() {
+        async loadOriginalData() {
             var url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRWU47ESuHz4qcj19M_qmhbpNQdgbuymoZpKVrBLjWMvV3nO2KdaPH4H6t4CFM-UelpR_-L3DqnO1l1/pub?gid=415927089&single=true&output=tsv&range=B"+document.getElementById('row').value;
             xmlhttp=new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
@@ -46,7 +46,7 @@ height="500" width="100%" loading="eager" style="border:none;">
             xmlhttp.send(null);
         }
         
-        function loadTranslatedData() {          
+        async loadTranslatedData() {          
             var url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRWU47ESuHz4qcj19M_qmhbpNQdgbuymoZpKVrBLjWMvV3nO2KdaPH4H6t4CFM-UelpR_-L3DqnO1l1/pub?gid=415927089&single=true&output=tsv&range=C"+document.getElementById('row').value;
             xmlhttp=new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
@@ -58,7 +58,7 @@ height="500" width="100%" loading="eager" style="border:none;">
             xmlhttp.send(null);
         }
         
-        function loadFinalData() {
+        async loadFinalData() {
             var url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRWU47ESuHz4qcj19M_qmhbpNQdgbuymoZpKVrBLjWMvV3nO2KdaPH4H6t4CFM-UelpR_-L3DqnO1l1/pub?gid=415927089&single=true&output=tsv&range=C"+document.getElementById('row').value;
             xmlhttp=new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
@@ -69,33 +69,12 @@ height="500" width="100%" loading="eager" style="border:none;">
             xmlhttp.open("GET",url,true);
             xmlhttp.send(null);
         }
-        
-        let timeout = null;
-        
+                
         function populate() {
-            clearTimeout(timeout);
-            
-            timeout = setTimeout(function() {
-                loadIndexData();
-            }, 5000);
-            
-            clearTimeout(timeout);
-            
-            timeout = setTimeout(function() {
-                loadOriginalData();
-            }, 5000);
-            
-            clearTimeout(timeout);
-            
-            timeout = setTimeout(function() {
-                loadTranslatedData();
-            }, 5000);
-            
-            clearTimeout(timeout);
-            
-            timeout = setTimeout(function() {
-                loadFinalData();
-            }, 5000);
+            loadIndexData();
+            loadOriginalData();
+            loadTranslatedData();
+            loadFinalData();
         }
     </script>
     
@@ -185,4 +164,4 @@ height="500" width="100%" loading="eager" style="border:none;">
   <!-- Submit the Form to Google Using "AJAX" -->
   <script data-cfasync="false" src="form-submission-handler.js"></script>
     
-    <p> 10:16 </p>
+    <p> 10:27 </p>
