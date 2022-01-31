@@ -70,12 +70,13 @@ height="500" width="100%" loading="eager" style="border:none;">
             xmlhttp.send(null);
         };
                 
+        const dataFillers = [loadIndexData, loadOriginalData, loadTranslatedData, loadFinalData];
+        
         const populate = () => {
-            loadIndexData();
-            loadOriginalData();
-            loadTranslatedData();
-            loadFinalData();
-        };
+            for (const filler of dataFillers) {
+                await filler();
+            }
+        };  
     </script>
     
     <input type="text" id="row" />
@@ -166,4 +167,4 @@ height="500" width="100%" loading="eager" style="border:none;">
     
     <p id = 'longness'> </p>
     
-    <p> 10:41 </p>
+    <p> 10:51 </p>
