@@ -78,11 +78,10 @@ height="500" width="100%" loading="eager" style="border:none;">
 
   <!-- Submit the Form to Google Using "AJAX" -->
   <script data-cfasync="false" src="form-submission-handler.js"></script>
-    <p> 2:07 </p>
     
     <script>
         function loadData() {
-            var url="https://docs.google.com/spreadsheet/pub?key=1MqT3iLpGCNUiqDoUzZLNitIFrltfXCC2pAQb2pqlfuQ&single=true&gid=0&range=A1&output=csv";
+            var url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRWU47ESuHz4qcj19M_qmhbpNQdgbuymoZpKVrBLjWMvV3nO2KdaPH4H6t4CFM-UelpR_-L3DqnO1l1/pub?gid=415927089&single=true&output=csv&range=A1";
             xmlhttp=new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
                 if(xmlhttp.readyState == 4 && xmlhttp.status==200){
@@ -96,3 +95,4 @@ height="500" width="100%" loading="eager" style="border:none;">
     
     <button type="button" onclick="loadData()">Load Spreadsheet Data</button>
     <div id="display"></div>
+    <p> 2:13 </p>
