@@ -42,7 +42,7 @@
     <script>
         function uponAStar () {
 
-            var newLine = [ [window.location.href.substr(-5), document.getElementById('my-input').value] ];
+            var newLine = [ [document.getElementById('my-input').value] ];
             // Cell values ...
             
             var body = {
@@ -61,7 +61,7 @@
         }
     </script>
     
-    <p>8:59 PM</p>
+    <p>9:04 PM</p>
     
     <input type="text" id="my-input" />
         
@@ -76,8 +76,8 @@
             timeout = setTimeout(function() {
                 document.getElementById('output').innerHTML = input.value;
                 uponAStar();
-                input.value = "";
                 document.getElementById('tester').innerHTML = window.location.href.substr(-5);
+                input.value = "";
             }, 1000);
         });
     </script>
