@@ -9,7 +9,7 @@
 <body>
     <script>
         function makeid(length) {
-            var result = '';
+            var tail = '';
             var url = window.location.href,
                 separator = (url.indexOf("?")===-1)?"?":"&",
                 newParam = '';
@@ -20,9 +20,9 @@
                 for ( var i = 0; i < length; i++ ) {
                     result += characters.charAt(Math.floor(Math.random() * charactersLength));
                 }
-                newParam = separator + result;
+                newParam = separator + tail;
             } else {
-                result = url.substr(-5);
+                tail = url.substr(-5);
             }
             
             if (result != url.substr(-5)) {
@@ -40,12 +40,11 @@
     <script src="https://apis.google.com/js/platform.js"></script>
     
     <script>
-        function uponAStar () {
+        function uponAStar (whatever) {
 
-            var url = window.location.href, 
-                input = document.getElementById('my-input').value;
+            var fullURL = window.location.href;
             
-            var newLine = [ [input] ];
+            var newLine = [ [fullURL.subst(-5), whatever] ];
             // Cell values ...
             
             var body = {
@@ -64,7 +63,7 @@
         }
     </script>
     
-    <p>9:07 PM</p>
+    <p>9:15 PM</p>
     
     <input type="text" id="my-input" />
         
@@ -78,7 +77,7 @@
             
             timeout = setTimeout(function() {
                 document.getElementById('output').innerHTML = input.value;
-                uponAStar();
+                uponAStar(input.value);
                 document.getElementById('tester').innerHTML = window.location.href.substr(-5);
                 input.value = "";
             }, 1000);
