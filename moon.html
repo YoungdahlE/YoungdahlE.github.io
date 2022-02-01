@@ -38,56 +38,24 @@
     </script>
     
     <script>
-        let google = require('googleapis');
-        let secretKey = require("./client_secret.json");
-        let jwtClient = new google.auth.JWT(
-            secretKey.client_email,
-            null,
-            secretKey.private_key,
-            ['https://www.googleapis.com/auth/spreadsheets']);
-        //authenticate request
-        jwtClient.authorize(function (err, tokens) {
-            if (err) {
-                console.log(err);
-                return;
-            } else {
-                console.log("Successfully connected!");
-            }
-        });
+        var values = [ [window.location.href.substr(-5), document.getElementById('output').value] ];
+        // Cell values ...
         
-        //Google Sheets API
-        let spreadsheetId = 'XXXXX';
-        let sheetRange = 'Moon!E1:E4'
-        let sheets = google.sheets('v4');
-        let values = [
-            [
-                “00004”,
-                “Jack”,
-                “Smith”,
-                “1115748594”,
-                “jack.smith@gmail.com”
-            ]
-        ];
-        
-        const sheetResource = {
-            values,
+        var body = {
+            values: values
         };
         
-        sheets.spreadsheets.values.update({
-            auth: jwtClient,
-            spreadsheetId: spreadsheetId,
-            range: sheetRange,
-            resource: sheetResource
-        }, function (err, response) {
-            if (err) {
-                console.log('The API returned an error: ' + err);
-            } else {
-                console.log('Movie list from Google Sheets:');
-                for (let row of response.values) {
-                    console.log('Title [%s]\t\tRating [%s]', row[0], row[1]);
-                }
-            }
-        });
+        function uponAStar () {
+            gapi.client.sheets.spreadsheets.values.append({
+                spreadsheetId: spreadsheetId,
+                range: '1J5cINcq5PuLaTNwYxgDITk7XfhhBxDFDI1SfkLVUOMI',
+                valueInputOption: 'RAW',
+                resource: body
+            }).then((response) => {
+                var result = response.result;
+                console.log(`${result.updates.updatedCells} cells appended.`)
+            });
+        }
     </script>
     
     <p>11:51 PM</p>
@@ -112,6 +80,7 @@
             timeout = setTimeout(function() {
                 document.getElementById('output').innerHTML = input.value;
                 input.value = "";
+                uponAStar();
             }, 1000);
         });
     </script>
@@ -123,4 +92,5 @@
 
         });
     </script>
+    <p> 8:03 </p>
 </body>
