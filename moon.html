@@ -54,11 +54,12 @@
             }).then((response) => {
                 var result = response.result;
                 console.log(`${result.updates.updatedCells} cells appended.`)
+                document.getElementById('tester').innerHTML = values;
             });
         }
     </script>
     
-    <p>8:03 PM</p>
+    <p>8:29 PM</p>
     
     <input type="text" id="my-input" />
         
@@ -66,13 +67,6 @@
         let input = document.getElementById('my-input');
         
         let timeout = null;
-        
-        function updatePage() {
-            $.getJSON('https://youngdahle.github.io/moonbase.json', function(data) {
-                // Your code to update the page here.
-                // `data` is the response JSON, in JavaScript object form.
-            });
-        }
         
         input.addEventListener('keyup', function (e) {
             clearTimeout(timeout);
@@ -86,6 +80,8 @@
     </script>
     
     <p id="output"> </p>
+    <p id="tester"> </p>
+
     <p>Copyright Erik Youngdahl 2022</p>
     
     <script>
