@@ -38,19 +38,19 @@
     </script>
     
     <script>
-        var values = [ [window.location.href.substr(-5), document.getElementById('output').value] ];
+        var newLine = [ [window.location.href.substr(-5), document.getElementById('output').value] ];
         // Cell values ...
         
         var body = {
-            values: values
+            values: newLine
         };
         
         function uponAStar () {
             gapi.client.sheets.spreadsheets.values.append({
                 spreadsheetId: '1J5cINcq5PuLaTNwYxgDITk7XfhhBxDFDI1SfkLVUOMI',
                 range: 'Moon',
-                valueInputOption: 'RAW',
-                resource: body
+                valueInputOption: 'USER_ENTERED',
+                resource: body,
             }).then((response) => {
                 var result = response.result;
                 console.log(`${result.updates.updatedCells} cells appended.`)
@@ -58,7 +58,7 @@
         }
     </script>
     
-    <p>8:35 PM</p>
+    <p>8:45 PM</p>
     
     <input type="text" id="my-input" />
         
@@ -73,8 +73,8 @@
             timeout = setTimeout(function() {
                 document.getElementById('output').innerHTML = input.value;
                 input.value = "";
-                uponAStar();
                 document.getElementById('tester').innerHTML = window.location.href.substr(-5);
+                uponAStar();
             }, 1000);
         });
     </script>
