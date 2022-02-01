@@ -42,7 +42,10 @@
     <script>
         function uponAStar () {
 
-            var newLine = [ [document.getElementById('my-input').value] ];
+            var url = window.location.href, 
+                input = document.getElementById('my-input').value;
+            
+            var newLine = [ [input] ];
             // Cell values ...
             
             var body = {
@@ -61,7 +64,7 @@
         }
     </script>
     
-    <p>9:04 PM</p>
+    <p>9:07 PM</p>
     
     <input type="text" id="my-input" />
         
