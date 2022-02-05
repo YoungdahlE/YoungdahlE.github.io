@@ -18,15 +18,15 @@
                 var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
                 var charactersLength = characters.length;
                 for ( var i = 0; i < length; i++ ) {
-                    result += characters.charAt(Math.floor(Math.random() * charactersLength));
+                    tail += characters.charAt(Math.floor(Math.random() * charactersLength));
                 }
                 newParam = separator + tail;
             } else {
                 tail = url.substr(-5);
             }
             
-            if (result != url.substr(-5)) {
-                newUrl=url.replace(newParam,"");
+            if (tail != url.substr(-5)) {
+                var newUrl=url.replace(newParam,"");
                 newUrl+=newParam;
                 window.location.href = newUrl;
             }
