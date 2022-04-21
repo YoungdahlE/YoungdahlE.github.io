@@ -7,6 +7,10 @@
     color: grey;
 }
 
+body {
+    background-color: yellow;
+}
+
 /*  This is for styling the main container that holds everything */
 #container {
     height: 100vh;
