@@ -4,7 +4,7 @@
     margin: 0;
     font-family: sans-serif;
     box-sizing: border-box;
-    color: grey;
+    color: #D7D9D0;
 }
 
 /*  This is for styling the main container that holds everything */
@@ -12,7 +12,7 @@
     height: 100vh;
     width: 100%;
     position: relative;
-    background: #2E97F2;
+    background: #D7D9D0;
 }
 
 /* This styles the navbar and its contents */
@@ -56,7 +56,7 @@
     margin: 0 30px;
     display: grid;
     place-items: center;
-    color: #2E97F2;
+    color: #D7D9D0;
 }
 
 /* This sets the hover action of the navbar links */
@@ -77,13 +77,13 @@
 /* This styles the heading in the 3D description */
 #content h2 {
     font-size: 140px;
-    color: #BF1784;
+    color: #025949;
 }
 
 /* This styles the paragraph in the 3D description*/
 #content p {
     font-size: 20px;
-    color: rgb(189, 189, 189);
+    color: #025373;
 }
 
 /* This styles the button in the 3D description*/
@@ -98,12 +98,12 @@
     outline: none;
     border-radius: 20px;
     background: #055902;
-    color: #1431D9;
+    color: #A4ADBF;
 }
 
 /* This adds some hover effects over the button */
 #content button:hover {
-    background: #7C17BF;
+    background: #6F8eBF;
 }
 
 /* This styles the social media icons*/
@@ -133,7 +133,7 @@
     width: 50px;
     font-size: 30px;
     margin: 10px;
-    color: #26BF69;
+    color: #025373;
     display: grid;
     place-items: center;
     cursor: pointer;
